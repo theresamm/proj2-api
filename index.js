@@ -53,7 +53,7 @@ async function main(){
             'text':'hello'
         });
     })
-    app.get('/restaurantreviews', async function (req,res){
+    app.get('/restaurants', async function (req,res){
         try{
         let criteria = {};
         if (req.query.name){
@@ -120,7 +120,7 @@ async function main(){
                 '$gte':parseInt(req.query.rating)
             }
         }
-        const restreviews = await db.collection('restaurantreviews').find(criteria,{
+        const restreviews = await db.collection('restaurants').find(criteria,{
             'projection':{
                 '_id':1,
                 'name':1,
@@ -147,9 +147,9 @@ async function main(){
     }
     })
 
-    app.post('/restaurantreviews', verifyAuthenticationJwt, async function (req,res){
+    app.post('/restaurants', async function (req,res){
         try{
-        const results = await db.collection('restaurantreviews').insertOne({
+        const results = await db.collection('restaurants').insertOne({
             "name":req.body.name,
             "cuisine":req.body.cuisine,
             "location":req.body.location,
@@ -174,12 +174,12 @@ async function main(){
         })
     }
     })
-    app.put('/restaurantreviews/:reviewId', verifyAuthenticationJwt, async function(req,res){
+    app.put('/restaurants/:reviewId', async function(req,res){
         try{
-        const review = await db.collection('restaurantreviews').findOne({
+        const review = await db.collection('restaurants').findOne({
             '_id':ObjectId(req.params.reviewId)
         })
-        const results = await db.collection('restaurantreviews').updateOne({
+        const results = await db.collection('restaurants').updateOne({
             '_id':ObjectId(req.params.reviewId)
     },{
         "$set":{
@@ -208,9 +208,9 @@ async function main(){
     })
 }
     })
-    app.delete('/restaurantreviews/:reviewId', verifyAuthenticationJwt, async function(req,res){
+    app.delete('/restaurants/:reviewId', async function(req,res){
         try{
-        await db.collection('restaurantreviews').deleteOne({
+        await db.collection('restaurants').deleteOne({
             '_id':ObjectId(req.params.reviewId)
         })
         res.json({
@@ -224,9 +224,9 @@ async function main(){
         })
     }
     })
-    app.post('/restaurantreviews/:reviewId/comments', verifyAuthenticationJwt, async function (req,res){
+    app.post('/restaurants/:reviewId/comments', async function (req,res){
         try{
-        const results = await db.collection('restaurantreviews').updateOne({
+        const results = await db.collection('restaurants').updateOne({
             _id: ObjectId(req.params.reviewId)
         },{
             '$push': {
@@ -251,9 +251,9 @@ async function main(){
         })
     }
     })
-    app.put('/comments/:commentId', verifyAuthenticationJwt, async function (req,res){
+    app.put('/comments/:commentId', async function (req,res){
         try{
-        const results = await db.collection('restaurantreviews').updateOne({
+        const results = await db.collection('restaurants').updateOne({
             'comments._id': ObjectId(req.params.commentId)
         },{
             '$set':{
@@ -275,9 +275,9 @@ async function main(){
         })
     }
     })
-    app.delete('/comments/:commentId', verifyAuthenticationJwt, async function (req,res){
+    app.delete('/comments/:commentId', async function (req,res){
         try{
-        const results = await db.collection('restaurantreviews').updateOne({
+        const results = await db.collection('restaurants').updateOne({
             'comments._id':ObjectId(req.params.commentId)
         },{
             '$pull':{
@@ -298,9 +298,9 @@ async function main(){
         })
     }
     })
-    app.get('/restaurantreviews/:reviewId', async function(req,res){
+    app.get('/restaurants/:reviewId', async function(req,res){
         try{
-        const review = await db.collection('restaurantreviews').findOne({
+        const review = await db.collection('restaurants').findOne({
             _id:ObjectId(req.params.reviewId)
         });
         res.json(review);
@@ -355,7 +355,7 @@ async function main(){
         })
     }
     })
-    app.get ('/user/:userId', verifyAuthenticationJwt, async function(req,res){
+    app.get ('/user/:userId', async function(req,res){
         try{
                 res.json({
                     'id': req.user.id,
