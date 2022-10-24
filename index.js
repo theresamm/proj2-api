@@ -74,6 +74,12 @@ async function main(){
                 '$options':'i'
             }
         }
+        if (req.query.image){
+            criteria.image = {
+                '$regex': req.query.image,
+                '$options':'i'
+            }
+        }
         if (req.query.bestseller){
             criteria.bestseller = {
                 '$regex': req.query.bestseller,
@@ -97,15 +103,15 @@ async function main(){
                 '$options':'i'
             }
         }
-        if (req.query.dining){
-            criteria.dining = {
-                '$elemMatch': req.query.dining,
-                '$options':'i'
-            }
-        }
         if (req.query.features){
             criteria.features = {
                 '$regex': req.query.features,
+                '$options':'i'
+            }
+        }
+        if (req.query.parking){
+            criteria.parking = {
+                '$regex': req.query.parking,
                 '$options':'i'
             }
         }
@@ -126,12 +132,13 @@ async function main(){
                 'name':1,
                 'cuisine':1,
                 'location':1,
+                'image':1,
                 'bestseller':1,
                 'meals':1,
                 'average_cost':1,
                 'store_hours':1,
-                'dining':1,
                 'features':1,
+                'parking':1,
                 'contact':1,
                 'rating':1
             }
@@ -147,18 +154,20 @@ async function main(){
     }
     })
 
+
     app.post('/restaurants', async function (req,res){
         try{
         const results = await db.collection('restaurants').insertOne({
             "name":req.body.name,
             "cuisine":req.body.cuisine,
             "location":req.body.location,
+            "image":req.body.image,
             "bestseller":req.body.bestseller,
             "meals":req.body.meals,
             "average_cost":req.body.average_cost,
             "store_hours":req.body.store_hours,
-            "dining":req.body.dining,
             "features":req.body.features,
+            "parking":req.body.parking,
             "contact":req.body.contact,
             "rating":req.body.rating
         })
@@ -174,6 +183,7 @@ async function main(){
         })
     }
     })
+
     app.put('/restaurants/:reviewId', async function(req,res){
         try{
         const review = await db.collection('restaurants').findOne({
@@ -186,12 +196,13 @@ async function main(){
             'name':req.body.name ? req.body.name : review.name,
             'cuisine':req.body.cuisine ? req.body.cuisine : review.cuisine,
             'location':req.body.location ? req.body.location : review.location,
+            'image':req.body.image ? req.body.image : review.image,
             'bestseller':req.body.bestseller ? req.body.bestseller : review.bestseller,
             'meals':req.body.meals ? req.body.meals : review.meals,
             'average_cost':req.body.average_cost ? req.body.average_cost : review.average_cost,
             'store_hours':req.body.store_hours ? req.body.store_hours : review.store_hours,
-            'dining':req.body.dining ? req.body.dining : review.dining,
             'features':req.body.features ? req.body.features : review.features,
+            'parking':req.body.parking ? req.body.parking : review.parking,
             'contact':req.body.contact ? req.body.contact : review.contact,
             'rating':req.body.rating ? req.body.rating : review.rating
         }
