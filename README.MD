@@ -4,7 +4,7 @@
 
 <p>The restaurant reviews API provides information and clients' reviews of the different restaurants in Metro Manila and nearby provinces. It aims to assist the users to quickly generate the relevant information on a specific restaurant of their choice or filter it out by categories.</p>
 
-Here is the deployed link website: <a href ="https://github.com/theresamm/project2-restaurantreview">link</a>
+Here is the deployed link website: <a href ="https://github.com/theresamm/proj2-api">link</a>
 
 <h2>FEATURES</h2>
 <li>The main features of the restaurant review API include the lists of different restaurants which enables the users to search the details by categories. This also could provide the relevant information related to the restaurants.  </li>
