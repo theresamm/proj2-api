@@ -13,7 +13,7 @@
 
 <img src=images/mongo.jpg>
 
-<h3>Credits and Acknowledgement</h3>
+<h3>Credits</h3>
 <li>MongoDB - https://cloud.mongodb.com</li>
 <li>Advanced Rest Client by MuleSoft </li>
 
