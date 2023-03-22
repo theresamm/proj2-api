@@ -14,7 +14,7 @@
 
 <li>Screenshot of Mongo Document Collection</li>
 
-<img src=images/mongoapi.JPG>
+<img src=images/mongo.jpg>
 
 <h3>Credits and Acknowledgement</h3>
 <li>MongoDB - https://cloud.mongodb.com</li>
