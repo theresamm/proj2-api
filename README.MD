@@ -7,9 +7,6 @@
 <p>Here is the deployed link website: <a href ="https://theresamm.github.io/project3-foodietrip/">link</a></p>
 <p>Github repository for deployed website: https://github.com/theresamm/project3-foodietrip</p>
 
-<h2>FEATURES</h2>
-<li>The main features of the restaurant review API include the lists of different restaurants which enables the users to search the details by categories. This also could provide the relevant information related to the restaurants.  </li>
-
 <h2>SAMPLE MONGO DOCUMENT</h2>
 
 <li>Screenshot of Mongo Document Collection</li>
