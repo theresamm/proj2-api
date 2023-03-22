@@ -1,10 +1,11 @@
 <h2>PROJECT NAME AND SUMMARY</h2>
 
-<h2>Restaurant Reviews</h2>
+<h2>FOODIE TRIP - API</h2>
 
-<p>The restaurant reviews API provides information and clients' reviews of the different restaurants in Metro Manila and nearby provinces. It aims to assist the users to quickly generate the relevant information on a specific restaurant of their choice or filter it out by categories.</p>
+<p>The Foodie Trip website aims to share and provide information to the users on the restaurants and food establishments in the Philippines. It enables the users to explore and search for new restaurants and to share their experiences and relative information for other users.</p>
 
-Here is the deployed link website: <a href ="https://github.com/theresamm/proj2-api">link</a>
+<p>Here is the deployed link website: <a href ="https://theresamm.github.io/project3-foodietrip/">link</a></p>
+<p>Github repository for deployed website: https://github.com/theresamm/project3-foodietrip</p>
 
 <h2>FEATURES</h2>
 <li>The main features of the restaurant review API include the lists of different restaurants which enables the users to search the details by categories. This also could provide the relevant information related to the restaurants.  </li>
