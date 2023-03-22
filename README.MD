@@ -14,25 +14,9 @@
 
 <li>Screenshot of Mongo Document Collection</li>
 
-<img src=images/mongo.JPG>
-
-<h2>API DOCUMENTATION</h2>
-
-<img src=images/post.JPG>
-<img src= images/post2.JPG>
-<img src= images/get.JPG>
-<img src= images/delete.JPG>
-
-<h2>TESTING</h2>
-
-Test cases for API endpoints can be found in the links below:
-<a href = images/test1.JPG>POST</a>
-<a href = images/test2.JPG>GET</a>
-<a href = images/test3.JPG>PUT AND DELETE</a>
+<img src=images/mongoapi.JPG>
 
 <h3>Credits and Acknowledgement</h3>
 <li>MongoDB - https://cloud.mongodb.com</li>
 <li>Advanced Rest Client by MuleSoft </li>
 
-<li>Consultations:
-I would like to express my gratitude to all the teachers who guided me and provided advice in completing the project.</li>
